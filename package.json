@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -39,7 +39,9 @@
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
-    "youtube-api-search": "0.0.5"
+    "youtube-api-search": "0.0.5",
+    "express": "^4.15.5",
+    "hbs": "^4.0.1"
   },
   "bugs": {
     "url": "https://github.com/ssimons1/office_jams/issues"

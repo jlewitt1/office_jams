@@ -15,6 +15,7 @@ const VideoDetail = ({video}) => {
             </div>
             <div className = "details">
                 <div>{video.snippet.title}</div>
+                TABLE
                 <div>{video.snippet.description}</div>
             </div>
         </div>
