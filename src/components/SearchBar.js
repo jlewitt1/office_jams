@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-//class based component-->needs a render method and return some JSX
 class SearchBar extends Component { 
     constructor(props) { 
         super(props); //initial state in a class based component
@@ -26,11 +25,3 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
-
-//functional component
-/*
-const SearchBar = () => { 
-    return <input />;
-};
-*/
-
