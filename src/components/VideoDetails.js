@@ -15,8 +15,6 @@ const VideoDetails = ({video}) => {
             </div>
             <div className = "details">
                 <div>{video.snippet.title}</div>
-                <div>{video.snippet.description}</div>
-                <div>{video.statistics.viewCount}</div>
             </div>
         </div>
     );

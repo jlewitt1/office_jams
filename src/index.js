@@ -4,9 +4,12 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
-import SearchBar from './components/search_bar';
-import VideoList from './components/video_list';
-import VideoDetail from './components/video_detail';
+import SearchBar from './components/SearchBar';
+import VideoList from './components/VideoList';
+import VideoDetails from './components/VideoDetails';
+import PlaylistHolder from './components/PlaylistHolder';
+import Button from './components/Button';
+
 const API_KEY = 'AIzaSyAgb7M84OCsJGmvsOwHwLho7vSMI5sLs9Y'; //use parent component to fetch data
 
 class App extends Component { 
@@ -16,8 +19,9 @@ class App extends Component {
         this.state = { 
             videos:[],
             selectedVideo: null, 
+            songs:[]
         };
-        this.videoSearch('surfboards');
+        this.videoSearch('beyonce');
     }
 
     videoSearch(term) { 
@@ -28,16 +32,27 @@ class App extends Component {
             });
         });
     }
+
+    addToPlaylist() { 
+       var selectedVideo = this.state.selectedVideo;
+       var playList = this.state.songs;
+       playList.push(selectedVideo);
+    };
+
+
     render() { 
         const videoSearch = _.debounce((term) => {this.videoSearch(term)},300);
 
         return(
         <div> 
             <SearchBar onSearchTermChange={videoSearch}  />
-            <VideoDetail video = {this.state.selectedVideo} />
+            <VideoDetails video = {this.state.selectedVideo} />
             <VideoList 
                 onVideoSelect= {selectedVideo => this.setState({selectedVideo})}
                 videos={this.state.videos} />
+            <Button link = '#' buttonId = 'addToPlaylist' text = 'Add to Playlist +' 
+            change = {this.addToPlaylist}  />
+            <PlaylistHolder songs={this.state.songs}   />
         </div>
         );
     }

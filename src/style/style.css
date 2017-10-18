@@ -1,17 +1,17 @@
-.search-bar { 
+.SearchBar { 
     margin: 20px;
     text-align: center;
 }
 
-.search-bar input { 
+.SearchBar input { 
     width:75%;
 }
 
-.video-item img { 
+.VideoItem img { 
     max-width: 64px;
 }
 
-.video detail .details { 
+.VideoDetail .details { 
     margin-top: 10px;
     padding:10px;
     border: 1px solid #ddd;

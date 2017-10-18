@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PlaylistItem from './PlaylistItem';
 
 const PlaylistHolder = (props) => { 
-    const songItems = props.videos.map((song)=> { 
+    const songItems = props.songs.map((song)=> { 
          return (
          <PlaylistItem  //give each item a key so can update the element without needing to re-render the whole list 
              key = {song.etag}
